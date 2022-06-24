@@ -6,7 +6,7 @@ import Nav from '../components/homePage/Nav';
 import Banner from '../components/homePage/Banner';
 import PromoContainer from '../components/homePage/PromoContainer';
 import Footer from '../components/homePage/Footer';
-
+import { Agent } from 'https';
 
 
 export default function Home() {
@@ -41,4 +41,14 @@ export default function Home() {
       <Footer/>
     </div>
   )
+}
+
+
+export async function getServerSideProps(context) {
+  const DataFetch= await fetch("https://api.storerestapi.com/products");
+  console.log(DataFetch)
+
+  return {
+    props: {}, // will be passed to the page component as props
+  }
 }
