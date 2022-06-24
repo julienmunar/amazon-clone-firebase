@@ -4,7 +4,12 @@ module.exports = {
   content: [  "./pages/**/*.{js,ts,jsx,tsx}",
   "./components/**/*.{js,ts,jsx,tsx}",],
   theme: {
-    extend: {},
+    extend: {
+      colors:{
+        "amazon-orange":'#FF9900',
+        "amazon-nav-bg":"#232F3E"
+      }
+    },
   },
-  plugins: [],
+  plugins: [ require('tailwind-scrollbar-hide')],
 }
