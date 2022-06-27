@@ -37,7 +37,7 @@ const Header = () => {
                     <p className=' whitespace-nowrap bg-[#F3F3F3] text-gray-700  text-xs '>Toutes nos categories </p>
                     <ArrowDropDownIcon />
                 </div>
-                <input className='w-full py-2 text-black outline-none pl-2   ' />
+                <input placeholder='Search' className='w-full py-2 text-black outline-none pl-2   ' />
                 <div className=''>
                     <SearchIcon className=' h-10 w-10 p-1.5 pr-1 text-gray-700 ' />
                 </div>

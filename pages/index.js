@@ -11,7 +11,7 @@ import ListArticle from "../components/homePage/ListArticle";
 export default function Home({ data }) {
   console.log(data);
   return (
-    <div className="flex flex-col bg-[#eaeded] ">
+    <div className="flex flex-col bg-[#eaeded]Ò ">
       <Head>
         <title>
           Amazon.fr : livres,DVD,jeux Videos,musique,high tech,informatique
