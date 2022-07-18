@@ -8,14 +8,12 @@ initialState={
 
 
 export const cartSlice = createSlice({
-  name: 'Cart',
+  name: 'cart',
   initialState,
   reducers: {
-    addItem: (state) => {
-      // Redux Toolkit allows us to write "mutating" logic in reducers. It
-      // doesn't actually mutate the state because it uses the immer library,
-      // which detects changes to a "draft state" and produces a brand new
-      // immutable state based off those changes
+    addItem: (state,action) => {
+
+        // FIlter addItems by Id, if ID not present add the new item, else, add +1 in id.qty
       state.value += 1
     },
     removeItem: (state) => {
