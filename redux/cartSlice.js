@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 
-initialState={
+let initialState={
     addedItems:[],
     total:0
 }
@@ -32,7 +32,7 @@ export const cartSlice = createSlice({
   },
 })
 
-export const { addItem,removeItem, DecreaseNumberItem, IncrementNumberItem } = counterSlice.actions
+export const { addItem,removeItem, DecreaseNumberItem, IncrementNumberItem } = cartSlice.actions
 
 
 

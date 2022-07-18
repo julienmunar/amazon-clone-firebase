@@ -3,8 +3,12 @@ import StarBorderOutlinedIcon from "@mui/icons-material/StarBorderOutlined";
 import ReactStars from "react-rating-stars-component";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { useDispatch,useSelector } from "react-redux";
+import { addItem } from "../../redux/cartSlice";
 const ListArticle = ({ data }) => {
   const router = useRouter();
+  const dispatch=useDispatch()
+
 
   const GoToArticleDetail = (id) => {
     id && router?.push(`/articles/${id}`);
@@ -22,6 +26,7 @@ const ListArticle = ({ data }) => {
               description={product.description}
               GoToArticleDetail={GoToArticleDetail}
               id={product.id}
+         
             />
           </div>
         );
@@ -42,9 +47,18 @@ const Product = ({
   GoToArticleDetail,
 }) => {
   const [isPrime] = useState(Math.random() < 0.5);
+  const addToCart=()=>{
+    dispatch(addItem({
+      id:id,
+      title:title,
+      qty:1,
+      price:price
+      
+    }))
+  }
 
   return (
-    <div className="gap-3 p-4 flex flex-col  items-center bg-white pt-10">
+    <div className="gap-3 p-4 flex flex-col  items-center bg-white pt-10" onClick={addToCart}>
       <div className=" h-72 w-52">
         <Image
           src={image}
