@@ -5,18 +5,27 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import MenuIcon from '@mui/icons-material/Menu';
-import { Menu } from '@mui/material';
+import { Menu, useRadioGroup } from '@mui/material';
+import { setCartOpen } from '../../redux/layoutSlice';
+import { useDispatch } from 'react-redux';
+import { useRouter } from 'next/router';
+const Header = ({ChangeCartStatus}) => {
+    const dispatch=useDispatch()
+    const router=useRouter()
 
-const Header = () => {
+const OpenCartPath=router.pathname =="/articles/[id]"
+console.log(OpenCartPath)
+console.log(router.pathname)
+
     return (
-        <div className='flex bg-[#131921] md:items-center flex-grow p-1 flex-col md:flex-row relative  '>
+        <div className='flex bg-[#131921] md:items-center flex-grow p-1 flex-col md:flex-row relative   '>
 
             {/* LEFT */}
             <div className='flex text-white space-x-2 flex-grow  md:flex-grow-0 order-1 mt-2 md:mt-0  '>
                 <div className='flex flex-grow  cursor-pointer'>
                     <MenuIcon className='md:hidden flex-grow-0' />
-                    <div className=' flex flex-grow  justify-center'>
-                        <img src="https://images-na.ssl-images-amazon.com/images/G/01/magicarp/image/amazon-logo-white.svg" width={127} height={50} alt="amazonLogo" objectFit='contain' layout='responsive' className=' flex-grow-0' />
+                    <div className=' flex flex-grow  justify-center' onClick={()=>{router.push('/')}}>
+                        <Image src="https://images-na.ssl-images-amazon.com/images/G/01/magicarp/image/amazon-logo-white.svg" width={127} height={50} alt="amazonLogo" objectFit='contain' className=' flex-grow-0'  />
                     </div>
 
                 </div>
@@ -37,7 +46,7 @@ const Header = () => {
                     <p className=' whitespace-nowrap bg-[#F3F3F3] text-gray-700  text-xs '>Toutes nos categories </p>
                     <ArrowDropDownIcon />
                 </div>
-                <input placeholder='Search' className='w-full py-2 text-black outline-none pl-2   ' />
+                <input placeholder='Search' className='w-full  py-8 lg:py-2 text-black outline-none pl-2   ' />
                 <div className=''>
                     <SearchIcon className=' h-10 w-10 p-1.5 pr-1 text-gray-700 ' />
                 </div>
@@ -52,7 +61,7 @@ const Header = () => {
                     <ButtonHeader title="Retours" action="et Commandes" />
                 </div>
 
-                <div className='flex relative items-center  border py-2 px-2 border-[#131921] hover:border hover:border-gray-300  cursor-pointer'>
+                <div className='flex relative items-center  border py-2 px-2 border-[#131921] hover:border hover:border-gray-300  cursor-pointer' onClick={()=>{ OpenCartPath ? (router.push('/cart')) : (ChangeCartStatus())}}>
                     <p className='absolute text-orange-400 font-bold text-lg left-5 top-0'>0</p>
                     <ShoppingCartIcon className=' text-4xl' />
                     <p className='font-bold text-sm hidden lg:inline'>Panier</p>

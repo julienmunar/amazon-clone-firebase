@@ -2,7 +2,7 @@ import React, { Children } from "react";
 import Image from "next/image";
 const PromoContainer = () => {
   return (
-    <div className=" -mt-20 sm:-mt-28  md-mt-52 lg:-mt-72 xl-mt-72 relative z-30  grid grid-flow-row  grid-cols-2 md:grid-cols-3 lg:grid-cols-4   m-2 gap-5">
+    <div className=" -mt-20 sm:-mt-28  md-mt-52 lg:-mt-72 xl-mt-72  relative z-30  grid grid-flow-row grid-cols-1 md:grid-cols-3 lg:grid-cols-4   m-2 gap-5">
       <PromoElement
         title="Obtenez vos codes promo"
         image="https://images-eu.ssl-images-amazon.com/images/G/08/EUBluefield/YourRewards/Stitch/XCM_Manual_1332127_1708202_DE_de_bluefield_reward_3873141_379x304_1X_de_DE._SY304_CB652322396_.jpg"

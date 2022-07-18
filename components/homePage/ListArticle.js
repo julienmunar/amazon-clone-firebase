@@ -1,16 +1,16 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import StarBorderOutlinedIcon from "@mui/icons-material/StarBorderOutlined";
 import ReactStars from "react-rating-stars-component";
 import Image from "next/image";
 import { useRouter } from "next/router";
 const ListArticle = ({ data }) => {
   const router = useRouter();
-  
+
   const GoToArticleDetail = (id) => {
     id && router?.push(`/articles/${id}`);
   };
   return (
-    <div className="grid grid-flow-row grid-cols-2 md:grid-cols-3 lg:grid-cols-4   m-2 gap-5 ">
+    <div className="grid grid-flow-row-dense auto-cols-fr  auto-rows-fr  grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4  m-2 gap-4 ">
       {data.map((product) => {
         return (
           <div key={product.id}>
@@ -41,26 +41,29 @@ const Product = ({
   id,
   GoToArticleDetail,
 }) => {
-
-  const [isPrime]=useState( Math.random()<0.5)
+  const [isPrime] = useState(Math.random() < 0.5);
 
   return (
-    <div className="gap-3 p-4 bg-white">
-      <div className="pb-4 h-52 max-w-xs grid place-content-center bg-gray-50">
+    <div className="gap-3 p-4 flex flex-col  items-center bg-white pt-10">
+      <div className=" h-72 w-52">
         <Image
           src={image}
-          width={150}
-          height={200}
-          className="object-contain cursor-pointer"
+          width={200}
+          height={250}
+         layout="responsive"
+          className="cursor-pointer"
           onClick={() => {
             GoToArticleDetail(id);
           }}
         />
       </div>
 
-      <p onClick={() => {
-            GoToArticleDetail(id);
-          }} className="text-[#4A9AA8] text-xl cursor-pointer hover:underline">
+      <p
+        onClick={() => {
+          GoToArticleDetail(id);
+        }}
+        className="text-[#4A9AA8] text-xl cursor-pointer hover:underline line-clamp-1 "
+      >
         {title}
       </p>
       <p className="text-sm  line-clamp-2">{description}</p>
@@ -72,19 +75,19 @@ const Product = ({
         activeColor="#E28839"
         edit={false}
       />
-      <p className="text-2xl font-bold relative pb-4">
-        {price} <span className="absolute text-sm">€</span>
+      <p className="text-2xl font-bold relative pb-4 whitespace-nowrap">
+        {price} <span className="absolute text-sm ">€</span>
       </p>
-    
-      {isPrime && (
+
+      {/* {isPrime && (
        <div className="flex whitespace-nowrap pb-4 items-center space-x-2">
-        <img className="w-12"
+        <Image className="w-12"
           src="https://logosarchive.com/wp-content/uploads/2021/07/Amazon-Prime-logo.svg"
        
-          alt="test"
+          alt="test" width={40} height={40}
         />
         <p className="text-xs text-gray-400">FREE Next Day Delivery</p>
-      </div> )}
+      </div> )} */}
 
       <button className=" bg-yellow-400 p-2 w-full hover:opacity-80 cursor-pointer">
         Add to Card
