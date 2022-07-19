@@ -10,7 +10,7 @@ const BodyCart = () => {
   const CartListRq = useSelector(selectCart);
   console.log(CartListRq);
   return (
-    <div className="bg-[#eaeded]  py-20  flex ">
+    <div className="bg-[#eaeded]  py-20  flex  flex-col md:flex-row">
       {/* BODY */}
       <div className=" bg-white mx-6 p-4 flex-grow rounded-sm ">
         {/* BODYLEFT */}

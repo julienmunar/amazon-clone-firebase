@@ -5,8 +5,8 @@ import Image from 'next/image'
 
 const Nav = () => {
     return (
-        <div className='flex  bg-amazon-nav-bg text-white py-1 pl-5 pr-2 overflow-x-scroll scrollbar-hide justify-between'>
-            <div className='flex space-x-4  '>
+        <div className='flex bg-amazon-nav-bg text-white py-1 pl-5 pr-2 overflow-x-scroll scrollbar-hide justify-between '>
+ 
             <MenuElement BeforeIcon={MenuIcon} title="Toutes" AfterIcon="" />
             <MenuElement BeforeIcon="" title="Ventes Flash" AfterIcon=""  />
             <MenuElement BeforeIcon="" title="Meilleures Ventes" AfterIcon="" />
@@ -16,7 +16,7 @@ const Nav = () => {
             <MenuElement BeforeIcon="" title="Service Client" AfterIcon="" />
             <MenuElement BeforeIcon="" title="Prime" AfterIcon={ArrowDropDownIcon} />
             <MenuElement BeforeIcon="" title="Ebooks Kindle" AfterIcon="" />
-            </div>
+          
        
             <img src="https://images-eu.ssl-images-amazon.com/images/G/08/digital/video/magellan/country/france/SWM/PV_FR_SWM_400x39_FT_PV._CB427581097_.jpg" width={300} height={30} alt="" className=' object-contain'/>
         </div>

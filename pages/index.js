@@ -28,7 +28,7 @@ export default function Home({ data }) {
     <SideCart />
       </div>
      
-<div className="flex flex-col bg-[#eaeded]  ">
+<div className="flex flex-col bg-[#eaeded] flex-grow ">
       <Head>
         <title>
           Amazon.fr : livres,DVD,jeux Videos,musique,high tech,informatique
