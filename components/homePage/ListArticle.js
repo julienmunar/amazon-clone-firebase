@@ -14,7 +14,7 @@ const ListArticle = ({ data }) => {
     id && router?.push(`/articles/${id}`);
   };
   return (
-    <div className="grid grid-flow-row-dense auto-cols-fr  auto-rows-fr  grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4  m-2 gap-4 ">
+    <div className="grid grid-flow-row-dense auto-cols-fr  auto-rows-fr  grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4  m-2 gap-4 ">
       {data.map((product) => {
         return (
           <div key={product.id}>
@@ -46,13 +46,15 @@ const Product = ({
   id,
   GoToArticleDetail,
 }) => {
+  const dispatch=useDispatch()
   const [isPrime] = useState(Math.random() < 0.5);
   const addToCart=()=>{
     dispatch(addItem({
       id:id,
       title:title,
-      qty:1,
-      price:price
+      amount:1,
+      price:price,
+      image:image
       
     }))
   }

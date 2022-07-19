@@ -1,16 +1,17 @@
-import React from 'react'
-import Header from '../components/homePage/Header'
-import Footer from '../components/homePage/Footer'
-import Cart from '../components/Cart'
+import React from "react";
+import Header from "../components/homePage/Header";
+import Footer from "../components/homePage/Footer";
+import BodyCart from "../components/CartPage/BodyCart";
+import Nav from "../components/homePage/Nav";
 const cart = () => {
   return (
     <div>
-      <Header/>
-      <Cart/>
-      <Footer/>
-     
+      <Header />
+      <Nav />
+      <BodyCart /> 
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default cart
+export default cart;

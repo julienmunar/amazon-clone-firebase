@@ -7,7 +7,7 @@ import Banner from "../components/homePage/Banner";
 import PromoContainer from "../components/homePage/PromoContainer";
 import Footer from "../components/homePage/Footer";
 import ListArticle from "../components/homePage/ListArticle";
-import Cart from "../components/Cart";
+import SideCart from "../components/SideCart";
 import { useDispatch, useSelector } from "react-redux";
 import { cartStatus } from "../redux/layoutSlice";
 import { setCartOpen } from "../redux/layoutSlice";
@@ -25,10 +25,10 @@ export default function Home({ data }) {
   return (
     <div className="flex ">
       <div className={` order-2  ${!CartisOpen ? " hidden":" block"} `}>
-    <Cart />
+    <SideCart />
       </div>
      
-<div className="flex flex-col bg-[#eaeded] flex-grow ">
+<div className="flex flex-col bg-[#eaeded]  ">
       <Head>
         <title>
           Amazon.fr : livres,DVD,jeux Videos,musique,high tech,informatique

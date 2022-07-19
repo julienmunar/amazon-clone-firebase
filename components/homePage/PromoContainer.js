@@ -2,7 +2,7 @@ import React, { Children } from "react";
 import Image from "next/image";
 const PromoContainer = () => {
   return (
-    <div className=" -mt-20 sm:-mt-28  md-mt-52 lg:-mt-72 xl-mt-72  relative z-30  grid grid-flow-row grid-cols-1 md:grid-cols-3 lg:grid-cols-4   m-2 gap-5">
+    <div className=" -mt-20 sm:-mt-28  md-mt-52 lg:-mt-72 xl-mt-72  relative z-30  grid grid-flow-row grid-cols-2 md:grid-cols-3 lg:grid-cols-4  m-2 gap-5">
       <PromoElement
         title="Obtenez vos codes promo"
         image="https://images-eu.ssl-images-amazon.com/images/G/08/EUBluefield/YourRewards/Stitch/XCM_Manual_1332127_1708202_DE_de_bluefield_reward_3873141_379x304_1X_de_DE._SY304_CB652322396_.jpg"
@@ -25,27 +25,30 @@ const PromoContainer = () => {
       />
       <PromoElement title="Accessoires Echo " link="en savoir plus">
         <div className="bg-[#F2FAFB] p-2">
-          <img
+          <Image width={50} height={50} alt=""
             className=" object-contain"
             src="	https://m.media-amazon.com/images/I/61pjrxGyK3S._AC_SY450_.jpg"
           />
         </div>
         <div className="bg-[#F2FAFB] p-2">
-          <img
+          <Image
             className=" object-contain"
             src="	https://m.media-amazon.com/images/I/41k8O1MfmOS._AC_.jpg"
+            width={50} height={50} alt=""
           />
         </div>
         <div className="bg-[#F2FAFB] p-2">
-          <img
+          <Image
             className=" object-contain"
             src="https://m.media-amazon.com/images/I/61GHjOxgI1S._AC_SL1500_.jpg"
+            width={50} height={50} alt=""
           />
         </div>
         <div className="bg-[#F2FAFB] p-2">
-          <img
+          <Image
             className=" object-contain"
             src="https://m.media-amazon.com/images/I/81oAfxMzgNL._AC_SX679_.jpg"
+            width={50} height={50} alt=""
           />
         </div>
       </PromoElement>
@@ -62,27 +65,31 @@ const PromoContainer = () => {
 
       <PromoElement title="Accessoires Echo " link="en savoir plus">
         <div className="bg-[#F2FAFB] p-2">
-          <img
+          <Image
             className=" object-contain"
             src="	https://m.media-amazon.com/images/I/61pjrxGyK3S._AC_SY450_.jpg"
+            width={50} height={50} alt=""
           />
         </div>
         <div className="bg-[#F2FAFB] p-2">
-          <img
+          <Image
             className=" object-contain"
             src="	https://m.media-amazon.com/images/I/41k8O1MfmOS._AC_.jpg"
+            width={50} height={50} alt=""
           />
         </div>
         <div className="bg-[#F2FAFB] p-2">
-          <img
+          <Image
             className=" object-contain"
             src="https://m.media-amazon.com/images/I/61GHjOxgI1S._AC_SL1500_.jpg"
+            width={50} height={50} alt=""
           />
         </div>
         <div className="bg-[#F2FAFB] p-2">
-          <img
+          <Image
             className=" object-contain"
             src="https://m.media-amazon.com/images/I/81oAfxMzgNL._AC_SX679_.jpg"
+            width={50} height={50} alt=""
           />
         </div>
       </PromoElement>
@@ -97,7 +104,7 @@ const PromoElement = (props) => {
     <div className="bg-white p-2 flex  flex-col items-center">
       <h2 className=" font-bold text-[21px] pb-2">{props.title}</h2>
       {props.image && (
-        <img
+        <Image
           src={props.image}
           alt=""
           width={315}
