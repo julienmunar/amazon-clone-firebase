@@ -61,12 +61,12 @@ const Product = ({
 
   return (
     <div className="gap-3 p-4 flex flex-col  items-center bg-white pt-10" onClick={addToCart}>
-      <div className=" h-72 w-52">
+      <div className=" ">
         <Image
           src={image}
           width={200}
           height={250}
-         layout="responsive"
+          objectFit="contain"
           className="cursor-pointer"
           onClick={() => {
             GoToArticleDetail(id);

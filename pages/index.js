@@ -16,7 +16,7 @@ import { setCartOpen } from "../redux/layoutSlice";
 export default function Home({ data }) {
 
   const CartisOpen=useSelector(cartStatus)
-  console.log(CartisOpen)
+
   const dispatch=useDispatch()
   const ChangeCartStatus=()=>{dispatch(setCartOpen())
 
@@ -45,7 +45,7 @@ export default function Home({ data }) {
         {/* carousel */}
         <Banner />
         {/* Proposition category */}
-        <div className="md:px-4 mx-10 sm:mx-0">
+        <div className="md:px-4 m-auto ">
           <PromoContainer />
           <ListArticle data={data }/>
         </div>

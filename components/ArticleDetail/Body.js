@@ -5,9 +5,9 @@ import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 
 const Body = ({ result }) => {
   return (
-    <div className="flex">
+    <div className="flex flex-col md:flex-row max-w-xs m-auto md:max-w-3xl xl:max-w-6xl">
       {/* LEFT */}
-      <div className="flex flex-col space-y-2">
+      <div className="flex flex-col space-y-2 hidden md:block">
         <AdditionalPicture image={result.image} />
         <AdditionalPicture image={result.image} />
         <AdditionalPicture image={result.image} />
@@ -17,7 +17,7 @@ const Body = ({ result }) => {
         <AdditionalPicture image={result.image} />
       </div>
       {/* Central */}
-      <div className="flex">
+      <div className="flex flex-col md:flex-row ">
         {/* Image */}
         <div className="flex  flex-col items-center pl-2 pr-6">
           <Image
@@ -26,7 +26,7 @@ const Body = ({ result }) => {
             height={400}
             objectFit="contain"
           />
-          <p className=" pt-24 text-sm">
+          <p className=" pt-24 text-sm hidden md:block">
             Passer la souris sur l'image pour zoomer
           </p>
         </div>
@@ -93,8 +93,8 @@ const Body = ({ result }) => {
         </div>
       </div>
       {/* Right */}
-      <div>
-        <p className=" py-1 px-8 rounded-full text-xs bg-[#fed70f] ">
+      <div className=" p-4">
+        <p className=" py-1 px-8 rounded-full text-xs bg-[#fed70f] text-center">
           Ajouter au panier
         </p>
       </div>

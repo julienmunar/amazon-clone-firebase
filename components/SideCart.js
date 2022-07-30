@@ -34,10 +34,10 @@ const SideCart = () => {
       </div>
       <div>
         {myShoppingCart?.map((item) => (
-          <div key={`${item.id}`} className="flex px-2 py-4">
+          <div key={`${item.id}`} className="flex px-2 py-4 flex-col md:flex-row">
             <Image src={`${item?.image}`} alt="" width={80} height={80} layout="fixed"/>
             <div className="pl-4">
-              <p className=" text-sm whitespace-nowrap truncate text-ellipsis">{item.title}</p>
+              <p className=" text-sm whitespace-nowrap truncate text-ellipsis hidden md:block ">{item.title}</p>
               <p className="text-[#b12604] font-bold text-sm">{item.price} €</p>
               <div className="flex space-x-2 flex-grow">
               <Image
