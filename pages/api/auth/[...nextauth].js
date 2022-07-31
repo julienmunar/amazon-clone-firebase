@@ -7,6 +7,7 @@ import GoogleProvider from 'next-auth/providers/google'
 export default NextAuth({
   providers: [
     // OAuth authentication providers...
+    
     AppleProvider({
       clientId: process.env.APPLE_ID,
       clientSecret: process.env.APPLE_SECRET
@@ -20,5 +21,6 @@ export default NextAuth({
       clientSecret: process.env.GOOGLE_SECRET
     }),
 
-  ]
+  ],
+  secret: process.env.SECRET,
 })
