@@ -13,7 +13,7 @@ const app = !admin.apps.length ? admin.initializeApp({
 
 const stripe=require("stripe")(process.env.STRIPE_SECRET_KEY)
 
-const endpointSecret = "whsec_4fe3f3223839ed1a9f098a970c7326058a318ed3475dc62da4317201c9c368fa";
+const endpointSecret = process.env.STRIPE_SIGNING_SECRET
 
 const fullFillOrder=async(session)=>{
 
